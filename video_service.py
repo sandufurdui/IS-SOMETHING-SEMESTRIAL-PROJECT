@@ -17,7 +17,7 @@ class VideoUpload(BaseModel):
 async def health_check():
     return {"status": "ok"}
 
-@app.post("/video/")
+@app.post("/video")
 async def upload_video(data: VideoUpload):
     try:
         video_bytes = base64.b64decode(data.video.encode('utf-8'))
